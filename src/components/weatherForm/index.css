@@ -1,0 +1,23 @@
+.WeatherForm input {
+  margin: 10px;
+  line-height: 50px;
+  padding: 5px;
+  border: none;
+  color: grey;
+  font-size: 150%;
+  border-bottom: 1px solid grey;
+}
+
+.WeatherForm input[type="text"] {
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.WeatherForm input[type="submit"] {
+  background-color: #f16051;
+  color: #fff;
+  border: 2px solid grey;
+  padding: 10px;
+  border-radius: 20px;
+  width: 40%;
+}
