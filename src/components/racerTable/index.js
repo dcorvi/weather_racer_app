@@ -6,34 +6,34 @@ class RacerTable extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <div className="container">
-            <table className="table table-striped table-dark">
-              <thead>
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>john@example.com</td>
-                </tr>
-                <tr>
-                  <td>Mary</td>
-                  <td>Moe</td>
-                  <td>mary@example.com</td>
-                </tr>
-                <tr>
-                  <td>July</td>
-                  <td>Dooley</td>
-                  <td>july@example.com</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table className="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Nationality</th>
+                <th>Sponsor</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.props.standings[0] &&
+                  this.props.standings.map( driver =>
+                    <tr key={driver.position}>
+                      <td>{driver.position}</td>
+                      <td>
+                        <a href={driver.Driver.url} target="_blank">
+                        {driver.Driver.givenName + ' ' + driver.Driver.familyName}</a>
+                      </td>
+                      <td>{driver.Driver.nationality}</td>
+                      <td>{driver.Constructors[0].name}</td>
+                      <td>{driver.points}</td>
+                    </tr>
+                  )
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     );
